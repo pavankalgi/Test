@@ -1,4 +1,4 @@
-node ('agent any'){ 
+agent { 
 def app_name = 'hello-world'
 
 
