@@ -1,5 +1,4 @@
-pipeline {
-     agent any {
+node('master') {
 def app_name = 'hello-world'
 
 
@@ -8,10 +7,6 @@ def image
 
 stage('Checkout') {
  checkout scm
- sshagent (credentials: ['ajey-test']){
-   sh 'git submodule update --init'
- }
-
  tag = sh(returnStdout: true, script: 'git rev-parse --short HEAD').trim()
 }
 
