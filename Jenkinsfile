@@ -7,8 +7,6 @@ def image
 
 stage('Checkout') {
  checkout scm
- }
-
  tag = sh(returnStdout: true, script: 'git rev-parse --short HEAD').trim()
 }
 
