@@ -1,5 +1,5 @@
 pipeline {
-     agent any {
+     agent any 
 def app_name = 'hello-world'
 
 
