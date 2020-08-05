@@ -1,5 +1,4 @@
-pipeline {
-agent any 
+node ('agent any'){ 
 def app_name = 'hello-world'
 
 
