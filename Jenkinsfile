@@ -1,4 +1,4 @@
-agent { 
+agent none { 
 def app_name = 'hello-world'
 
 
