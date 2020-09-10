@@ -16,9 +16,9 @@ stage('Build') {
     image = docker.build("${app_name}:${tag}")
  }
 
-stage('Promote') {
- docker.withRegistry("${registry_url}" {
- docker.build("${app_name}:${tag}").push("${tag}")
- }
-}
+ stage('Promote') {
+   docker.withRegistry("${registry_url}" {
+   docker.build("${app_name}:${tag}").push("${tag}")
+   }
+  }
 }
