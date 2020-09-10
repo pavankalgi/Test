@@ -17,8 +17,8 @@ def image
   }
 
  stage('Promote') {
-   docker.withRegistry("${registry_url}" {
-   docker.build("${app_name}:${tag}").push("${tag}")
+   docker.withRegistry("${registry_url}") {
+    docker.build("${app_name}:${tag}").push("${tag}")
    }
  }
  
