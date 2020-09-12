@@ -1,6 +1,6 @@
 node('master') {
 def app_name = 'hello-world'
-def registry_url = 'http://3.6.126.19:5000'
+def registry_url = 'http://13.127.74.244:5000'
 
 
 def tag
