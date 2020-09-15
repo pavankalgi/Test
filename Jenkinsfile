@@ -21,5 +21,10 @@ def image
     docker.build("${app_name}:${tag}").push("${tag}")
    }
  }
- 
+
+ post {
+    always {
+        emailext body: 'A Test EMail', recipientProviders: [[$class: 'ajey.k106@gmail.com'], [$class: 'ajey.k106@gmail.com']], subject: 'Test'
+    }
+} 
 }
