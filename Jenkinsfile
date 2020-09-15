@@ -22,9 +22,4 @@ def image
    }
  }
 
- post {
-    always {
-        emailext body: 'A Test EMail', recipientProviders: [[$class: 'ajey.k106@gmail.com'], [$class: 'ajey.k106@gmail.com']], subject: 'Test'
-    }
-} 
 }
