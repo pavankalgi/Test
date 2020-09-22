@@ -1,0 +1,11 @@
+---
+- hosts: demo
+  become: true
+  tasks: 
+    - name: giving sudo access 
+      lineinfile:
+              dest: /etc/sudoers
+              state: present
+              regexp: '^%test'
+              line: 'test ALL=(ALL) NOPASSWD: ALL'
+              validate: 'visudo -cf %s'

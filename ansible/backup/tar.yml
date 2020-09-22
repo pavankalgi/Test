@@ -1,0 +1,14 @@
+---
+- hosts: demo
+  become:  true
+  tasks:
+    - name: tar the file
+      archive:
+        path: /home/centos/tar-test
+        dest: /home/tar-test.tgz
+    - name: untar 
+      unarchive:
+        src: tar-test.tgz
+        dest: /home/centos/
+    - name: untar the file which is already in remote machine
+      shell: gunzip /home/tar-test.tgz

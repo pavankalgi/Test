@@ -1,0 +1,8 @@
+---
+- hosts: demo
+  become: true
+  tasks:
+    - name: copy test file
+      copy:
+        src: /home/ubuntu/ansible/test
+        dest: /home/

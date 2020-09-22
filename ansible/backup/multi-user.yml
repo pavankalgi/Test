@@ -1,0 +1,17 @@
+---
+- hosts: demo
+  become: true
+  tasks: 
+    - name: creating multiple users
+      user: name='{{item}}' state=present
+      with_items:
+              - ajey
+              - pavan
+              - test1
+    
+    - name: adding ssh key
+      authorized_key:
+              user: test1 
+              state: present
+              key: "{{ lookup('file', '/home/test1/.ssh/id_rsa.pub') }}"
+      

@@ -1,0 +1,18 @@
+---
+- hosts: demo
+  remote_user: centos
+  become: true
+  tasks:
+    - name: create container from image
+      become: yes
+      docker_container:
+        name: "Jenkins"
+        image: "jenkins/jenkins"
+        ports:
+            - "8080:8080"
+            - "50000:50000"
+        volumes:
+            - "/share/jenkins:/var/jenkins_home"
+        state: started
+
+

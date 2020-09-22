@@ -1,0 +1,10 @@
+---
+- hosts: demo
+  remote_user: ec2-user
+  become: true
+  tasks:
+    - name: replacing file
+      replace:
+              path: /home/test1/hosts
+              regexp: 'test 0.0.0.0'
+              replace: ''

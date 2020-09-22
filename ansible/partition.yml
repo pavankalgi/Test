@@ -1,0 +1,12 @@
+---
+- hosts: demo
+  become: true
+  tasks:
+    - name: creating partition
+      parted:
+        device: /dev/xvda1
+        flags: [ lvm ]
+        number: 1
+        state: present
+        part_end: 1GiB
+      become: yes

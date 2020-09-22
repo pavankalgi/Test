@@ -1,0 +1,10 @@
+---
+- hosts: demo
+  become: true
+  tasks: 
+    - name: creating lvm
+      lvg:
+       vg: vg1
+       pvs: /dev/xvda1
+       pesize: 100
+

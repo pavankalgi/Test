@@ -1,0 +1,12 @@
+---
+- hosts: demo
+  become: true
+  tasks:
+    - name: add repo
+      yum_repository:
+              name: epel
+              description: EPEL YUM repo
+              baseurl: https://download.fedoraproject.org/pub/epel/$releasever/$basearch/
+              mirrorlist: http://mirrorlist.repoforge.org/el7/mirrors-rpmforge
+              gpgcheck: no
+              enabled: no

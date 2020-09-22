@@ -1,0 +1,9 @@
+---
+- hosts: demo
+  become: true
+  tasks:
+    - name: Running the container
+      docker_container:
+        name: jenkins     
+        image: jenkins/jenkins
+        state: started
